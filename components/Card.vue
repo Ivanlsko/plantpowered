@@ -9,7 +9,7 @@ function round(macronutrient) {
 </script>
 <template>
   <a :href="recipe.recipe_link" target="_blank">
-    <div class="w-full card card-compact bg-base-100 p-2 text-primary-content">
+    <div class="w-full h-full card card-compact bg-base-100 p-2 text-primary-content">
       <figure class="rounded-lg">
         <div class="h-96 min-w-full flex items-center justify-center"><img :src="recipe.image_link" alt="Shoes" class="rounded-md" /></div>
       </figure>
