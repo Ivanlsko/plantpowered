@@ -2,34 +2,16 @@
 defineProps({
   recipe: Object,
 });
-
-function round(macronutrient) {
-  return macronutrient && Number(macronutrient) && Math.round(Number(macronutrient));
-}
 </script>
 <template>
-  <a :href="recipe.recipe_link" target="_blank">
-    <div class="w-full h-full card card-compact bg-base-100 p-2 text-primary-content">
-      <figure class="rounded-lg">
-        <div class="h-96 min-w-full flex items-center justify-center"><img :src="recipe.image_link" alt="Shoes" class="rounded-md" /></div>
-      </figure>
-      <div class="card-body rounded-lg my-2">
-        <labels :recipe="recipe"></labels>
-        <h2 class="card-title">{{ recipe.name }}</h2>
-        <card-recipe-details :difficulty="recipe.difficulty" :time="Number(recipe.time)" :price="9.99"></card-recipe-details>
-        <p class="text-gray-500">{{ recipe.description_short }}</p>
+  <NuxtLink href="/modal">
+    <div mainwrapper>
+      <div image class="h-80 overflow-hidden"><img class="w-full h-full object-cover rounded-md" :src="recipe.image_link" alt="Shoes" /></div>
+      <div text class="mt-4 mb-4">
+        <p class="text-xs text-gray-500 mb-2">{{ recipe.time }} MIN | {{ recipe.macros.kcal }} KCAL</p>
+        <p class="text-lg font-medium mb-2">{{ recipe.name }}</p>
+        <p class="text-sm w-[95%] text-gray-700">{{ recipe.description_short }}</p>
       </div>
-      <!--     <div id="recipe-macros" class="flex gap-2">
-      <div class="flex justify-around rounded-lg bg-neutral text-neutral-content text-sm w-3/4 p-1 py-2 items-center">
-        <p>{{ round(recipe.macros?.proteins) }}g proteins</p>
-        <p>{{ round(recipe.macros?.carbs) }}g carbs</p>
-        <p>{{ round(recipe.macros?.fats) }}g fats</p>
-      </div>
-
-      <div class="flex justify-around rounded-lg bg-neutral text-neutral-content text-sm w-1/4 py-2 items-center">
-        <p>{{ round(recipe.macros?.kcal) }} kcal</p>
-      </div>
-    </div> -->
     </div>
-  </a>
+  </NuxtLink>
 </template>

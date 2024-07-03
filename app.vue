@@ -1,15 +1,5 @@
 <template>
-  <div class="bg-white h-full p-3">
-    <div class="rounded-2xl bg-grey-200">
-      <section class="">
-        <hero></hero>
-      </section>
-      <cards></cards>
-      <div class="">
-        <footer-base></footer-base>
-      </div>
-    </div>
-  </div>
+  <div class="p-5 lg:px-8 lg:py-6"><nuxt-page></nuxt-page></div>
 </template>
 
 <script setup></script>

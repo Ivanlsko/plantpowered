@@ -8,5 +8,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: ['nuxt-icon'],
+  modules: ['nuxt-icon', "@nuxtjs/strapi"],
+  strapi: {},
 });
